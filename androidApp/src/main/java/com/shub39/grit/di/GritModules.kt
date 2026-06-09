@@ -21,6 +21,8 @@ import androidx.datastore.preferences.core.Preferences
 import com.shub39.grit.core.data.datastore.DatastoreFactory
 import com.shub39.grit.domain.AuthService
 import com.shub39.grit.domain.AuthServiceImpl
+import com.shub39.grit.domain.ImagePickerService
+import com.shub39.grit.domain.ImagePickerServiceImpl
 import com.shub39.grit.domain.UserDatastore
 import com.shub39.grit.domain.UserDatastoreImpl
 import com.shub39.grit.habits.data.database.HabitDatabase
@@ -60,4 +62,7 @@ class GritModules {
 
     @Single
     fun getAuthService(): AuthService = AuthServiceImpl()
+
+    @Single
+    fun getImagePickerService(): ImagePickerService = ImagePickerServiceImpl()
 }

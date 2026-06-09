@@ -101,4 +101,9 @@
     <string name="email">邮箱</string>
     <string name="confirm_password">确认密码</string>
     <string name="already_have_account">已有账号？</string>
+    <string name="image_picker">图片选择器</string>
+    <string name="take_photo">拍照</string>
+    <string name="choose_from_gallery">从相册选择</string>
+    <string name="remove_image">移除图片</string>
+    <string name="selected_image">已选图片</string>
 </resources>

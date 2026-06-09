@@ -39,6 +39,7 @@ import com.shub39.grit.core.components.RegisterPage
 import com.shub39.grit.core.data.notification.GritNotificationManager.Companion.createNotificationChannel
 import com.shub39.grit.core.theme.GritTheme
 import com.shub39.grit.domain.BiometricUtils
+import com.shub39.grit.domain.ImagePickerServiceImpl
 import com.shub39.grit.viewmodel.LoginViewModel
 import com.shub39.grit.viewmodel.MainViewModel
 import io.github.vinceglb.filekit.FileKit
@@ -50,12 +51,15 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MainActivity : FragmentActivity() {
     private val mainViewModel: MainViewModel by viewModel()
     private val loginViewModel: LoginViewModel by viewModel()
+    private val imagePickerService: ImagePickerServiceImpl by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         enableEdgeToEdge()
         FileKit.init(this)
+
+        imagePickerService.registerActivityResultLaunchers(this)
 
         createNotificationChannel(this)
 
